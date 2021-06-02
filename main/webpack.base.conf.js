@@ -5,7 +5,9 @@ module.exports = {
   entry: {
     index: './index.js'
   },
-
+  output: {
+    publicPath: '/'
+  },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
@@ -32,16 +34,16 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './index.html',
-      chunks: ['index'],
-      inject: true,
-      minify: {
-        html5: true,
-        collapseWhitespace: true,
-        preserveLineBreaks: false,
-        minifyCss: true,
-        minifyJs: true,
-        removeComments: false
-      }
+      // chunks: ['index'],
+      // inject: true,
+      // minify: {
+      //   html5: true,
+      //   collapseWhitespace: true,
+      //   preserveLineBreaks: false,
+      //   minifyCss: true,
+      //   minifyJs: true,
+      //   removeComments: false
+      // }
     }),
   ],
 };
