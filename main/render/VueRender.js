@@ -1,4 +1,3 @@
-// import Vue from 'vue/dist/vue.esm';
 import {createApp} from 'vue/dist/vue.esm-browser';
 
 function vueRender({ loading }) {

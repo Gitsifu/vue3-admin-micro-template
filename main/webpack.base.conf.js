@@ -2,24 +2,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { name } = require('./package');
 
 module.exports = {
-  entry: process.env.MODE === 'multiple' ? './multiple.js' : './index.js',
-  devtool: 'source-map',
-  devServer: {
-    open: true,
-    port: '7079',
-    clientLogLevel: 'warning',
-    disableHostCheck: true,
-    compress: true,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-    },
-    historyApiFallback: true,
-    overlay: { warnings: false, errors: true },
+  entry: {
+    index: './index.js'
   },
-  output: {
-    publicPath: '/',
-  },
-  mode: 'development',
+
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
@@ -45,11 +31,17 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: process.env.MODE === 'multiple' ? './multiple.html' : './index.html',
+      template: './index.html',
+      chunks: ['index'],
+      inject: true,
       minify: {
-        removeComments: true,
+        html5: true,
         collapseWhitespace: true,
-      },
+        preserveLineBreaks: false,
+        minifyCss: true,
+        minifyJs: true,
+        removeComments: false
+      }
     }),
   ],
 };
