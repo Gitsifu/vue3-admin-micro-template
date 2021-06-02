@@ -20,20 +20,17 @@
 </template>
 
 <script>
+import { toRef, ref, reactive } from 'vue'
 export default {
     name: "App",
-    props: {
-        loading: {
-            required: true,
-            default: true,
-            type: Boolean
+    setup(props){
+        const loading = reactive(props.loading)
+
+        const push = (subapp) => {
+            window.history.pushState(null, subapp, subapp)
         }
-    },
-    data() {
-        return {};
-    },
-    methods: {
-        push(subapp) { window.history.pushState(null, subapp, subapp) }
+
+        return { loading, push };
     }
 }
 </script>
