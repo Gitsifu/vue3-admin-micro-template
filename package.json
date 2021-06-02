@@ -1,0 +1,40 @@
+{
+  "name": "vue3-admin-micro-template",
+  "version": "1.0.0",
+  "description": "A completed implementation of Micro Frontends for Vue3",
+  "keywords": [
+    "micro frontend",
+    "microfrontend",
+    "micro frontends",
+    "micro-frontend",
+    "micro-frontends",
+    "microservice",
+    "vue",
+    "vue3",
+    "vue3-admin",
+    "vue3-admin-micro"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitsifu/vue3-admin-micro-template.git"
+  },
+  "author": "sifu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gitsifu/vue3-admin-micro-template/issues"
+  },
+  "homepage": "https://github.com/gitsifu/vue3-admin-micro-template#readme",
+  "scripts": {
+    "micro:start": "npm-run-all --parallel start:*",
+    "micro:install": "npm-run-all --serial build install:*",
+    "install:main": "cd main && npm install",
+    "install:app1": "cd app1 && npm install",
+    "install:app2": "cd app2 && npm install",
+    "start:main": "cd main && npm run start",
+    "start:app1": "cd app1 && npm run start",
+    "start:app2": "cd app2 && npm run start"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
