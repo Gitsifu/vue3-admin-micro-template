@@ -1,12 +1,13 @@
-import Vue from 'vue/dist/vue.esm';
+// import Vue from 'vue/dist/vue.esm';
+import {createApp} from 'vue/dist/vue.esm-browser';
 
 function vueRender({ loading }) {
-  return new Vue({
+  return createApp({
     template: `
       <div class="mainapp">
         <!-- 标题栏 -->
         <header class="mainapp-header">
-          <h1>QianKun</h1>
+          <h1>Vue3-Micro</h1>
         </header>
         <div class="mainapp-main">
           <!-- 侧边栏 -->
@@ -17,12 +18,11 @@ function vueRender({ loading }) {
           <!-- 子应用  -->
           <div class="subapp-container">
             <h4 v-if="loading" class="subapp-loading">Loading...</h4>
-            <div id="subapp-viewport"></div>
+            <div id="main-viewport"></div>
           </div>
         </div>
       </div>
     `,
-    el: '#app-container',
     data() {
       return {
         loading,
@@ -31,7 +31,7 @@ function vueRender({ loading }) {
     methods: {
       push(subapp) { window.history.pushState(null, subapp, subapp) }
     }
-  });
+  }).mount('#app-container');
 }
 
 let app = null;

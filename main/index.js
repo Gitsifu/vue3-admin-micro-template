@@ -24,14 +24,14 @@ registerMicroApps(
     {
       name: 'app1',
       entry: '//localhost:8080',
-      container: '#subapp-viewport',
+      container: '#main-viewport',
       loader,
       activeRule: '/app1',
     },
     {
       name: 'app2',
       entry: '//localhost:8081',
-      container: '#subapp-viewport',
+      container: '#main-viewport',
       loader,
       activeRule: '/app2',
     }
