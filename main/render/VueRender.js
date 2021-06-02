@@ -1,7 +1,12 @@
 import {createApp} from 'vue';
 import App from './App.vue'
+import {Button,Card} from 'ant-design-vue';
+
 function vueRender({ loading }) {
-  return createApp(App,{loading}).mount('#app-container');
+  return createApp(App,{loading})
+      .use(Button)
+      .use(Card)
+      .mount('#app-container');
 }
 
 let app = null;
