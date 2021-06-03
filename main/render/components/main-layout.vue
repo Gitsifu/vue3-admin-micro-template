@@ -1,36 +1,39 @@
 <template>
     <div id="components-layout-custom-trigger">
         <a-layout>
-            <a-layout-sider v-model:collapsed="collapsed" :trigger="null" collapsible class="sider">
-                <div class="logo" />
-                <a-menu @click="onClickMenu" theme="dark" mode="inline" v-model:selectedKeys="selectedKeys">
-                    <a-menu-item key="1">
-                        <user-outlined />
-                        <span>nav 1</span>
-                    </a-menu-item>
-                    <a-menu-item key="2">
-                        <video-camera-outlined />
-                        <span>nav 2</span>
-                    </a-menu-item>
-                    <a-menu-item key="3">
-                        <upload-outlined />
-                        <span>nav 3</span>
-                    </a-menu-item>
-                </a-menu>
-            </a-layout-sider>
+            <slot name="menu"></slot>
+            <sider-menu :collapsed="collapsed"></sider-menu>
             <a-layout>
                 <a-layout-header style="background: #fff; padding: 0">
-                    <menu-unfold-outlined
-                            v-if="collapsed"
-                            class="trigger"
-                            @click="() => (collapsed = !collapsed)"
-                    />
-                    <menu-fold-outlined v-else class="trigger" @click="() => (collapsed = !collapsed)" />
+                    <div class="header">
+                        <menu-unfold-outlined
+                                v-if="collapsed"
+                                class="trigger"
+                                @click="() => (collapsed = !collapsed)"
+                        />
+                        <menu-fold-outlined v-else class="trigger" @click="() => (collapsed = !collapsed)" />
+
+                        <a-dropdown>
+                            <a-avatar :size="32">
+                                <template #icon><UserOutlined /></template>
+                            </a-avatar>
+                            <template #overlay>
+                                <a-menu>
+                                    <a-menu-item>
+                                        <a href="javascript:;">个人资料</a>
+                                    </a-menu-item>
+                                    <a-menu-item>
+                                        <a href="javascript:;">退出登录</a>
+                                    </a-menu-item>
+                                </a-menu>
+                            </template>
+                        </a-dropdown>
+                    </div>
                 </a-layout-header>
                 <a-layout-content
                         :style="{ margin: '24px 16px', padding: '24px', background: '#fff', minHeight: '280px' }"
                 >
-                    <div id="main-viewport"></div>
+                   <slot name="content"></slot>
                 </a-layout-content>
             </a-layout>
         </a-layout>
@@ -47,8 +50,10 @@ import {
     MenuFoldOutlined,
 } from '@ant-design/icons-vue';
 import { defineComponent, ref } from 'vue';
+import SiderMenu from "./sider-menu.vue";
 export default defineComponent({
     components: {
+        SiderMenu,
         UserOutlined,
         VideoCameraOutlined,
         UploadOutlined,
@@ -56,13 +61,9 @@ export default defineComponent({
         MenuFoldOutlined,
     },
     setup() {
-        const onClickMenu = ({item,key,keyPath}) => {
-            console.log({item,key,keyPath})
-        }
         return {
             selectedKeys: ref(['1']),
             collapsed: ref(false),
-            onClickMenu
         };
     },
 });
@@ -70,24 +71,23 @@ export default defineComponent({
 
 <style lang="less" scoped>
 #components-layout-custom-trigger{
-    .sider{
-        height: 100vh;
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 24px;
     }
+
     .trigger {
         font-size: 18px;
         line-height: 64px;
-        padding: 0 24px;
         cursor: pointer;
         transition: color 0.3s;
     }
     .trigger:hover {
         color: #1890ff;
     }
-    .logo {
-        height: 32px;
-        background: rgba(255, 255, 255, 0.3);
-        margin: 16px;
-    }
+
     .site-layout .site-layout-background {
         background: #fff;
     }

@@ -18,6 +18,6 @@ export default function render({ loading }) {
   if (!app) {
     app = vueRender({ loading });
   } else {
-    app.loading = loading;
+    // app.loading = loading;
   }
 }
