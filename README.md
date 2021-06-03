@@ -1,5 +1,21 @@
 # vue3-admin-micro-template
 
+## 这是什么
+
+一款开箱即用的 Vue3 微前端项目模版，基于 Vue(3.x) & umijs/qiankun(2.4.2)
+
+## 特点
+
+## 文档
+
+## 支持
+
+如果觉得模版不错，或者已经在使用了，希望你可以去 **Github** 或者 **Gitee(码云)** 帮我点个 ⭐ ，这将对我是极大的鼓励。
+
+[![star](https://img.shields.io/github/stars/gitsifu/vue3-admin-micro-template?style=social)](https://github.com/gitsifu/vue3-admin-micro-template)
+
+[![star](https://gitee.com/sifu/vue3-admin-micro-template/badge/star.svg?theme=dark)](https://gitee.com/sifu/vue3-admin-micro-template)
+
 ## 一、下载依赖
 
 ```shell
@@ -16,11 +32,11 @@ npm run mico:start
 
 [http://localhost:7079](http://localhost:7079)
 
-## 一、搭建过程中遇到的问题
+## 四、搭建过程中遇到的问题
 
 ### 1、导入运行时 + 编译器版本 
 
-使用以下代码时的vue导入需导入运行时 + 编译器版本
+使用以下代码时（template）的vue导入需导入运行时 + 编译器版本
 
 使用如下代码渲染
 
@@ -86,3 +102,14 @@ Vue 3: TypeError: compiler.parseComponent is not a function
 TypeError: compiler.compile is not a function
 ```
 最终解决方案（Google牛逼）：https://forum.vuejs.org/t/compilation-error-vue-3/114117
+
+---
+
+更多功能：
+
+- [x] 可初步运行
+- [ ] 子项目单独运行可加载菜单栏
+- [ ] 集成操作 sessionStorage & localStorage & Cookies 更加简便的方法
+- [ ] 更多...
+
+
