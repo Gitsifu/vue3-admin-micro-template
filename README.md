@@ -1,5 +1,21 @@
 # vue3-admin-micro-template
 
+## 一、下载依赖
+
+```shell
+npm micro:install
+```
+
+## 二、运行
+
+```shell
+npm run mico:start
+```
+
+## 三、访问
+
+[http://localhost:7079](http://localhost:7079)
+
 ## 一、搭建过程中遇到的问题
 
 ### 1、导入运行时 + 编译器版本 
