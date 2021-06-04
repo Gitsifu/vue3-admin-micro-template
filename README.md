@@ -16,6 +16,24 @@
 - [ ] 集成操作 sessionStorage & localStorage & Cookies 更加简便的方法
 - [ ] 更多...
 
+## 指南
+
+### 下载依赖
+
+```shell
+npm micro:install
+```
+
+### 运行
+
+```shell
+npm run mico:start
+```
+
+### 访问
+
+[http://localhost:7079](http://localhost:7079)
+
 ## 文档
 
 ## 支持
@@ -26,23 +44,9 @@
 
 [![star](https://gitee.com/sifu/vue3-admin-micro-template/badge/star.svg?theme=dark)](https://gitee.com/sifu/vue3-admin-micro-template)
 
-## 一、下载依赖
 
-```shell
-npm micro:install
-```
 
-## 二、运行
-
-```shell
-npm run mico:start
-```
-
-## 三、访问
-
-[http://localhost:7079](http://localhost:7079)
-
-## 四、搭建过程中遇到的问题
+## 搭建过程中遇到的问题
 
 ### 1、导入运行时 + 编译器版本 
 

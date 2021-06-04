@@ -23,11 +23,10 @@ export default defineComponent({
     collapsed: Boolean
   },
   setup() {
+    const router = useRouter()
     const state = reactive({
       selectedKeys: ['/app1']
     })
-
-    const router = useRouter()
 
     const menus = [
       {
@@ -83,7 +82,11 @@ export default defineComponent({
       if (/http(s)?:/.test(key)) {
         window.open(key)
       } else {
+        if(window.__POWERED_BY_QIANKUN__){
           history.pushState(null, key, key)
+        }else {
+          router.push(key)
+        }
       }
     }
     return {

@@ -4,6 +4,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 import App from './App.vue';
 import routes from './router';
 import store from './store';
+import Antd from 'ant-design-vue';
+import 'ant-design-vue/dist/antd.css';
 
 let router = null;
 let instance = null;
@@ -19,6 +21,7 @@ function render(props = {}) {
     });
 
     instance = createApp(App);
+    instance.use(Antd);
     instance.use(router);
     instance.use(store);
     instance.mount(container ? container.querySelector('#app') : '#app');
