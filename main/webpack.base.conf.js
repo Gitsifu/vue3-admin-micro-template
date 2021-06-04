@@ -4,7 +4,7 @@ const { name } = require('./package');
 
 module.exports = {
   entry: {
-    index: './index.js'
+    index: './src/index.js'
   },
   output: {
     publicPath: '/'
@@ -46,7 +46,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: './index.html',
+      template: './public/index.html',
       chunks: ['index'],
       inject: true,
       minify: {

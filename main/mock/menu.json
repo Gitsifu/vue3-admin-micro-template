@@ -1,0 +1,26 @@
+{
+  "menu": {
+    "code": 200,
+    "msg": "SUCCESS",
+    "data": [
+      {
+        "name": "APP1",
+        "path": "/app1",
+        "hidden": false,
+        "meta": {
+          "title": "app1"
+        },
+        "children": []
+      },
+      {
+        "name": "APP2",
+        "path": "/app2",
+        "hidden": false,
+        "meta": {
+          "title": "app2"
+        },
+        "children": []
+      }
+    ]
+  }
+}

@@ -27,6 +27,7 @@
   "scripts": {
     "micro:start": "npm-run-all --parallel start:*",
     "micro:install": "npm-run-all --serial build install:*",
+    "micro:mock": "json-server --watch ./main/mock/menu.json",
     "install:main": "cd main && npm install",
     "install:app1": "cd app1 && npm install",
     "install:app2": "cd app2 && npm install",
@@ -35,6 +36,7 @@
     "start:app2": "cd app2 && npm run start"
   },
   "devDependencies": {
+    "json-server": "^0.16.3",
     "npm-run-all": "^4.1.5"
   }
 }

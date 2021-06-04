@@ -6,6 +6,16 @@
 
 ## 特点
 
+- 微服务架构，子模块可单独开发与部署
+- 
+
+## TODO
+
+- [x] 可初步运行
+- [ ] 子项目单独运行可加载菜单栏
+- [ ] 集成操作 sessionStorage & localStorage & Cookies 更加简便的方法
+- [ ] 更多...
+
 ## 文档
 
 ## 支持
@@ -105,11 +115,5 @@ TypeError: compiler.compile is not a function
 
 ---
 
-更多功能：
-
-- [x] 可初步运行
-- [ ] 子项目单独运行可加载菜单栏
-- [ ] 集成操作 sessionStorage & localStorage & Cookies 更加简便的方法
-- [ ] 更多...
 
 
