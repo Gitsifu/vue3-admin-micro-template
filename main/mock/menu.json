@@ -4,22 +4,27 @@
     "msg": "SUCCESS",
     "data": [
       {
-        "name": "APP1",
-        "path": "/app1",
-        "hidden": false,
+        "name": "app1",
         "meta": {
-          "title": "app1"
+          "title": "应用app1",
+          "hidden": false
         },
-        "children": []
-      },
-      {
-        "name": "APP2",
-        "path": "/app2",
-        "hidden": false,
-        "meta": {
-          "title": "app2"
-        },
-        "children": []
+        "children": [
+          {
+            "name": "home",
+            "meta": {
+              "title": "home",
+              "hidden": false
+            }
+          },
+          {
+            "name": "about",
+            "meta": {
+              "title": "about",
+              "hidden": false
+            }
+          }
+        ]
       }
     ]
   }

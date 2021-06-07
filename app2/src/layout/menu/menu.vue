@@ -30,44 +30,21 @@ export default defineComponent({
 
     const menus = [
       {
-        "name": "/app1",
-        "meta": {
-          "title": "应用app1",
-          "hidden": false,
-        },
-        "children": [
-          {
-            "name": 'home',
-            "meta": {
-              "title": 'home',
-              "hidden": false,
-            }
-          },
-          {
-            "name": 'about',
-            "meta": {
-              "title": 'about',
-              "hidden": false,
-            }
-          }
-        ]
-      },
-      {
-        "name": "/app2",
+        "name": "app2",
         "meta": {
           "title": "应用app2",
           "hidden": false,
         },
         "children": [
           {
-            "name": 'home',
+            "name": 'app2-home',
             "meta": {
               "title": 'home',
               "hidden": false,
             }
           },
           {
-            "name": 'about',
+            "name": 'app2-about',
             "meta": {
               "title": 'about',
               "hidden": false,

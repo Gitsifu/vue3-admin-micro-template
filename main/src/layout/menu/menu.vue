@@ -1,5 +1,6 @@
 <template>
     <a-menu
+        v-model:openKeys="openKeys"
         v-model:selectedKeys="selectedKeys"
         mode="inline"
         theme="dark"
@@ -24,29 +25,35 @@ export default defineComponent({
         collapsed: Boolean
     },
     setup() {
+
+        // 获取当前打开的子菜单
+        const getOpenKeys = () => {
+            const prefixApp = location.pathname.slice(1).split('/')[0]
+            return [prefixApp]
+        }
+
         const state = reactive({
+            openKeys: getOpenKeys(),
             selectedKeys: ['/app1']
         })
 
-        const router = useRouter()
-
         const menus = [
             {
-                "name": "/app1",
+                "name": "app1",
                 "meta": {
                     "title": "应用app1",
                     "hidden": false,
                 },
                 "children": [
                     {
-                        "name": '/app1/home',
+                        "name": 'app1-home',
                         "meta": {
                             "title": 'home',
                             "hidden": false,
                         }
                     },
                     {
-                        "name": '/app1/about',
+                        "name": 'app1-about',
                         "meta": {
                             "title": 'about',
                             "hidden": false,
@@ -55,21 +62,21 @@ export default defineComponent({
                 ]
             },
             {
-                "name": "/app2",
+                "name": "app2",
                 "meta": {
                     "title": "应用app2",
                     "hidden": false,
                 },
                 "children": [
                     {
-                        "name": '/app2/home',
+                        "name": 'app2-home',
                         "meta": {
                             "title": 'home',
                             "hidden": false,
                         }
                     },
                     {
-                        "name": '/app2/about',
+                        "name": 'app2-about',
                         "meta": {
                             "title": 'about',
                             "hidden": false,
@@ -84,7 +91,8 @@ export default defineComponent({
             if (/http(s)?:/.test(key)) {
                 window.open(key)
             } else {
-                history.pushState(null, key, key)
+                const path = '/' + key.replaceAll('-','/')
+                history.pushState(null, path, path)
             }
         }
         return {
