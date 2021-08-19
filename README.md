@@ -12,7 +12,7 @@
 ## TODO
 
 - [x] 可初步运行
-- [ ] 子项目单独运行可加载菜单栏
+- [x] 子项目单独运行可加载菜单栏
 - [ ] 集成操作 sessionStorage & localStorage & Cookies 更加简便的方法
 - [ ] 提取 Layout 为公共组件，发布成npm包
 - [ ] 优化！优化！优化！
